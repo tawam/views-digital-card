@@ -439,19 +439,24 @@ body {
 }
 
 .social-section {
-  width: min(1060px, calc(100% - 48px));
+  width: min(1280px, calc(100% - 48px));
   margin: 96px auto 0;
   position: relative;
   z-index: 5;
 }
 
 .social-grid {
-  width: min(1060px, 100%);
+  width: min(1240px, 100%);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
+  gap: 14px;
+}
+
+.social-link {
+  width: 228px;
+  flex: 0 0 228px;
 }
 
 .social-link {
@@ -475,9 +480,9 @@ body {
 
 .social-label {
   display: block;
-  padding-left: 20px;
+  padding-left: 18px;
   color: rgba(243, 242, 238, 0.68);
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -485,9 +490,9 @@ body {
 .social-inner {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   min-height: 48px;
-  padding: 0 20px;
+  padding: 0 16px;
   border-radius: 999px;
   border: 1px solid rgba(147, 147, 200, 0.24);
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
@@ -505,17 +510,17 @@ body {
 }
 
 .social-icon {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
   display: inline-grid;
   place-items: center;
   color: var(--yellow);
 }
 
 .social-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
   display: block;
 }
 
@@ -524,9 +529,9 @@ body {
 }
 
 .social-meta strong {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.16;
   color: rgba(243, 242, 238, 0.76);
 }
 
@@ -625,7 +630,14 @@ body {
   }
 
   .social-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .social-link {
+    width: calc(50% - 7px);
+    flex: 0 0 calc(50% - 7px);
   }
 }
 
@@ -683,8 +695,14 @@ body {
   }
 
   .social-grid {
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    flex-wrap: wrap;
     gap: 14px;
+  }
+
+  .social-link {
+    width: calc(50% - 7px);
+    flex: 0 0 calc(50% - 7px);
   }
 }
 
@@ -756,11 +774,14 @@ body {
   }
 
   .social-grid {
-    grid-template-columns: 1fr;
+    width: 100%;
+    flex-direction: column;
     gap: 12px;
   }
 
   .social-link {
+    width: 100%;
+    flex: 0 0 100%;
     gap: 5px;
   }
 
