@@ -7,7 +7,10 @@
     <meta name="description" content="Dados cadastrais e bancários da Views Locações e Produções LTDA em uma apresentação institucional moderna." />
     <link rel="preload" href="./fonts/PPMori-Regular.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="./fonts/PPMori-SemiBold.otf" as="font" type="font/otf" crossorigin>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preload" href="./assets/logo_views_primaria.png" as="image">
+    <link rel="preload" href="./assets/logo_views_cores.png" as="image">
+    <link rel="preload" href="./assets/logo_views_V_solo_alt.png" as="image">
+    <link rel="stylesheet" href="./styles.css?v=3" />
   </head>
   <body>
     <header class="site-header">
@@ -23,27 +26,31 @@
         <div class="hero-glow hero-glow-b"></div>
         <div class="hero-spotlight"></div>
         <img src="./assets/logo_views_cores.png" alt="Logo Views" class="hero-logo-ghost" />
-        <img src="./assets/logo_views_V_solo_alt.png" alt="Logo Views" class="hero-logo-ghost hero-logo-vsolo" />
 
         <div class="hero-content">
+          <img src="./assets/logo_views_V_solo_alt.png" alt="Logo Views" class="hero-logo-vsolo" />
           <p class="eyebrow">Dados administrativos e bancários</p>
-          <h1>Views Locações e Produções LTDA</h1>
+          <h1 id="company-name">Views Studios Co. LTDA</h1>
           <p class="hero-copy">Mais do que cenografia, <span class="hero-copy-highlight">Direção Artística.</span></p>
+          <div class="company-switch" role="tablist" aria-label="Selecionar empresa">
+            <button class="company-tab is-active" type="button" data-company="studios" aria-pressed="true" aria-label="Mostrar dados da Views Studios"><span>Views Studios</span></button>
+            <button class="company-tab" type="button" data-company="locacoes" aria-pressed="false" aria-label="Mostrar dados da Views Locações"><span>Views Locações</span></button>
+          </div>
         </div>
       </section>
 
-      <section class="info-grid section-shell">
+      <section class="info-grid section-shell" id="info-grid" aria-live="polite">
         <article class="card card-company">
           <div class="card-head">
             <span class="card-icon">◢</span>
             <h2>Dados da empresa</h2>
           </div>
           <div class="data-list">
-            <div><span>CNPJ</span><strong>25.321.330/0001-00</strong></div>
-            <div><span>Insc. Mun</span><strong>17 10 1.132.241-9</strong></div>
-            <div><span>Endereço</span><strong>Rua Estrada da Graciosa 362 - Atuba</strong></div>
-            <div><span>CEP</span><strong>82840-360</strong></div>
-            <div><span>Cidade</span><strong>Curitiba</strong></div>
+            <div><span>CNPJ</span><strong id="company-cnpj">52.980.858/0001-63</strong></div>
+            <div><span>Insc. Mun</span><strong id="company-insc">17 10 1.132.241-9</strong></div>
+            <div><span>Endereço</span><strong id="company-address">Rua Estrada da Graciosa 362 - Atuba</strong></div>
+            <div><span>CEP</span><strong id="company-cep">82840-360</strong></div>
+            <div><span>Cidade</span><strong id="company-city">Curitiba</strong></div>
           </div>
         </article>
 
@@ -53,13 +60,53 @@
             <h2>Dados bancários</h2>
           </div>
           <div class="data-list">
-            <div><span>Banco</span><strong>Sicredi</strong></div>
-            <div><span>Agência</span><strong>0730</strong></div>
-            <div><span>Conta corrente</span><strong>17766-7</strong></div>
-            <div><span>PIX</span><strong>25321330000100</strong></div>
-            <div><span>Titular</span><strong>Views Locações</strong></div>
+            <div><span>Banco</span><strong id="bank-name">Sicredi</strong></div>
+            <div><span>Agência</span><strong id="bank-branch">0730</strong></div>
+            <div><span>Conta corrente</span><strong id="bank-account">26916-0</strong></div>
+            <div><span>PIX</span><strong id="bank-pix">camila@viewsproducoes.com.br</strong></div>
+            <div><span>Titular</span><strong id="bank-holder">Views Studios</strong></div>
           </div>
         </article>
+      </section>
+
+      <section class="social-section" id="social-section">
+        <div class="social-intro-wrap">
+          <span class="card-icon social-intro-icon">✦</span>
+          <div class="social-intro">
+            <h2>Presença digital</h2>
+            <p class="social-subtitle">Acesse nossos canais oficiais</p>
+          </div>
+        </div>
+          <div class="social-grid" id="social-grid">
+            <a class="social-link" id="social-site" href="#" target="_blank" rel="noreferrer noopener" aria-label="Abrir site oficial">
+              <span class="social-label">SITE</span>
+              <span class="social-inner">
+                <span class="social-icon" aria-hidden="true"></span>
+                <span class="social-meta"><strong>Portifólio para você experenciar nossos feitos.</strong></span>
+              </span>
+            </a>
+            <a class="social-link" id="social-linkedin" href="#" target="_blank" rel="noreferrer noopener" aria-label="Abrir LinkedIn">
+              <span class="social-label">Linkedin</span>
+              <span class="social-inner">
+                <span class="social-icon" aria-hidden="true"></span>
+                <span class="social-meta"><strong>Rede corporativa</strong></span>
+              </span>
+            </a>
+            <a class="social-link" id="social-instagram" href="#" target="_blank" rel="noreferrer noopener" aria-label="Abrir Instagram">
+              <span class="social-label">Instagram</span>
+              <span class="social-inner">
+                <span class="social-icon" aria-hidden="true"></span>
+                <span class="social-meta"><strong>Conteúdo visual e bastidores</strong></span>
+              </span>
+            </a>
+            <a class="social-link" id="social-whatsapp" href="#" target="_blank" rel="noreferrer noopener" aria-label="Abrir WhatsApp">
+              <span class="social-label">WhatsApp</span>
+              <span class="social-inner">
+                <span class="social-icon" aria-hidden="true"></span>
+                <span class="social-meta"><strong>Entre em contato conosco</strong></span>
+              </span>
+            </a>
+          </div>
       </section>
 
     </main>
@@ -74,9 +121,12 @@
         <span class="segment segment-green"></span>
         <span class="segment segment-yellow"></span>
       </div>
+      <div class="award-badge award-badge-footer" aria-label="Prêmio Brasileiro de Design 2020, 2022 e 2023">
+        <img src="./assets/views_premio_design.svg" alt="Prêmio Brasileiro de Design 2020, 2022 e 2023" class="award-badge-image" />
+      </div>
       <p class="footer-mantra">Criar, Produzir, Experenciar, Regenerar.</p>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="./script.js?v=3"></script>
   </body>
 </html>
